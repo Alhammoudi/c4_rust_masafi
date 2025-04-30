@@ -35,6 +35,21 @@ pub enum Stmt {
     Block(Vec<Stmt>),
 }
 
+#[derive(Debug, Clone)] 
+pub enum Stmt{
+    Return(Expr),
+    If { condition: Expr, then_branch: Box<Stmt>, else_branch: Option<Box<Stmt>> }, 
+    While {cindition: Expr, body: Box<Stmt> }, 
+    Let { name: String, value: Expr ), 
+    Assign{ name : String, value: Expr },
+    Block(Vec<Stmt>), 
+    Function {
+        name: Sting
+        params: Vec<String>,
+        body: Box<Stmt>,
+    }
+}
+
 
 
 
